@@ -1,0 +1,11 @@
+apiVersion: v2
+name: load-testing
+description: A Helm chart for lcost
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+
+dependencies:
+- name: locust
+  repository: https://charts.deliveryhero.io
+  version: 0.9.19

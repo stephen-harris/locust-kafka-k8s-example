@@ -1,0 +1,6 @@
+dependencies:
+- name: locust
+  repository: https://charts.deliveryhero.io
+  version: 0.9.19
+digest: sha256:cc96e1d902c882b05368f1adc1a78c63620c91d9981b0392ddeb0ee09ccc8036
+generated: "2021-06-23T16:41:37.826421646+01:00"

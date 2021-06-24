@@ -1,0 +1,15 @@
+cp-helm-charts:
+  cp-kafka:
+    enabled: true
+    replicas: 1
+  cp-zookeeper:
+    enabled: true
+    severs: 1
+  cp-schema-registry:
+    enabled: true
+  cp-kafka-rest:
+    enabled: false
+  cp-kafka-connect:
+    enabled: false
+  cp-ksql-server:
+    enabled: false 

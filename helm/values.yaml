@@ -1,0 +1,25 @@
+# locust.loadtest.locust_locustfile
+# name of locustfile
+
+locust:
+  loadtest:
+    # name of config map container locust file (must contain file locust_locustfile)
+    locust_locustfile_configmap: "kafka-example-locustfile"
+    locust_lib_configmap: "kafka-example-lib"
+    pip_packages:
+      - confluent_kafka
+      - requests
+      - avro-python3
+      - fastavro
+
+  worker:
+    environment:
+      TOPIC: to-do-list2
+      BOOTSTRAP_SERVERS: kafka-example-cp-kafka.default.svc.cluster.local:9092
+      SCHEMA_REGISTRY: http://kafka-example-cp-schema-registry.default.svc.cluster.local:8081
+
+  master:
+    environment:
+      TOPIC: to-do-list2
+      BOOTSTRAP_SERVERS: kafka-example-cp-kafka.default.svc.cluster.local:9092
+      SCHEMA_REGISTRY: http://kafka-example-cp-schema-registry.default.svc.cluster.local:8081

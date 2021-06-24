@@ -1,0 +1,11 @@
+apiVersion: v2
+name: kafka
+description: A Helm chart for kafka
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+
+dependencies:
+- name: cp-helm-charts
+  repository: https://confluentinc.github.io/cp-helm-charts
+  version: 0.6.1
