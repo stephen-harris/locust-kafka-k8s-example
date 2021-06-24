@@ -37,3 +37,16 @@ k port-forward svc/kafka-example-locust 8089:8089
 ```
 
 Go to <http://localhost:8089/> to start the load test.
+
+
+## Modifying the load test
+
+The `locustfile` is `helm/locustfiles/kafka-example/main.py`. Once you make any changes, reapply the helm chart and restart the locust nodes:
+
+```
+cd helm
+helm template --name-template=kafka-example helm > locust.yaml
+k apply -f locust.yaml
+k rollout restart deployment/kafka-example-locust-master
+k rollout restart deployment/kafka-example-locust-worker
+```
